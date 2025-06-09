@@ -689,18 +689,44 @@ Blog Area
                 </div>
             </div>
             <!-- Right Side -->
-              <form class="contact-form" action="contact.php" method="POST" autocomplete="off">
+            <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+            <form class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSc8CYXQipYQFqwCqkq5fIlshGcfoGFp_3x57o5cZwcx0WcApg/formResponse" method="POST" target="hidden_iframe">
+              <input type="text" class="contact-input" name="entry.1057123277" placeholder="Name" required>
+              <input type="email" class="contact-input" name="entry.733910804" placeholder="Email" required>
+              <input type="text" class="contact-input" name="entry.56142248" placeholder="Company (Optional)">
+              <textarea class="contact-textarea" name="entry.2004515935" placeholder="Enter the message" rows="4" required></textarea>
+              <button type="submit" class="contact-submit">Send message &rarr;</button>
+          </form>
+
+        <script>
+          const form = document.querySelector('.contact-form');
+          const thanks = document.getElementById('thanks-message');
+        
+          form.addEventListener('submit', function() {
+            // Show a message after submission
+            setTimeout(() => {
+            alert("✅ Your message has been sent. Thank you!")
+              form.reset();
+              thanks.style.display = 'block';
+            }, 1000);
+          });
+        </script>
+
+              <!-- <form class="contact-form" action="contact.php" method="POST" autocomplete="off"> -->
                 <!-- <input type="text" class="contact-input" placeholder="Name" required>
                 <input type="email" class="contact-input" placeholder="Work Email" required>
                 <input type="text" class="contact-input" placeholder="Company (Optional)">
                 <textarea class="contact-textarea" placeholder="Enter the message" rows="4"></textarea> -->
-                <input type="text" class="contact-input" name="name" placeholder="Name" required>
-    <input type="email" class="contact-input" name="email" placeholder="Email" required>
-    <input type="text" class="contact-input" name="company" placeholder="Company (Optional)">
-    <textarea class="contact-textarea" name="message" placeholder="Enter the message" rows="4"></textarea>
+                <!-- <input type="text" class="contact-input" name="name" placeholder="Name" required>
+                <input type="email" class="contact-input" name="email" placeholder="Email" required>
+                <input type="text" class="contact-input" name="company" placeholder="Company (Optional)">
+                <textarea class="contact-textarea" name="message" placeholder="Enter the message" rows="4"></textarea>
                 <button type="submit" class="contact-submit">Send message&rarr;</button>
-            </form>
-        </div>
+            </form> -->
+
+
+        </div>  
     </section>
 
 
